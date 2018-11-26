@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Página de Cadastro de alunos</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="paginaCadastro.css">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+
+		<div id="app">
+		
+
+			<div v-show="show == 3">
+				<h1>Página do Aluno</h1>
+				<div id="opcoes">
+					<button @click="show = 1">Cadastrar aluno</button>
+					<button @click="show = 4">Consultar notas</button>
+				</div>
+			</div>
+
+
+
+			<div v-show="show == 1">
+				<img src="./img/backIcon.png" class="backIcon" v-on:click="main()">
+				<h1 >Página de cadastro do aluno</h1>
+				<div id="insercao">
+					<p>Insira o nome do aluno</p>
+					<input v-model="text" v-on:keyup.enter="addStudent()" placeholder="Nome"/>
+<!-- ==============USAR O TRECHO ABAIXO PARA VISUALIZAR OS ALUNOS NA LISTA=====================-->
+					<!--<ul>
+						<li v-for="item in list">{{item.text}}</li>
+					</ul> -->
+				</div>
+			</div>
+
+
+
+			<div v-show="show == 2">
+				<div id="notas">
+					<p>Insira as notas</p>
+				
+					<input v-model="grade1" placeholder="nota p1">
+					<input v-model="grade2" placeholder="nota p2">
+					<input v-model="grade3" placeholder="nota p3">
+					<button v-on:click="addGrades()">OK</button>
+				</div>
+			</div>
+
+
+			<div v-show="show == 4">
+			<img src="./img/backIcon.png" class="backIcon" v-on:click="main()">
+				<h1>Página de consulta de notas</h1>
+				<div id="consulta">
+				<p>Insira o nome do aluno que deseja pesquisar</p>
+				<input v-model="text" v-on:keyup.enter="searchStudent()" placeholder="Enter a student"/>
+				<select v-model="text">
+				<option v-for="item in list">{{item.text}}</option>
+				</select>
+				</div>
+			</div>
+
+			<div id="tabelaNotas" v-show="show == 5">
+				<table >
+					<tr>
+						<th>Nota 1</th>
+						<th>Nota 2</th>
+						<th>Nota 3</th>
+						<th>Média </th>
+					</tr>
+					<tr>
+						<th>{{grade1}}</th>
+						<th>{{grade2}}</th>
+						<th>{{grade3}}</th>
+						<th>{{average}}</th>
+					</tr>
+					<button v-on:click="check()">OK</button>
+				</table>
+			</div>
+
+
+
+
+		
+		</div> <!-- #app end -->
+
+		<script src="paginaCadastro.js"></script>
+	</body>
+</html>

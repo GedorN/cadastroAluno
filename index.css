@@ -1,0 +1,40 @@
+@font-face{
+	font-family: Font;
+	src:url('./fonts/font.ttf');
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-image: url('./img/background.jpg');
+	background-repeat: no-repeat;
+}
+
+h1{
+	font-family: font;
+	font-size: 78px;
+	text-align: center;
+}
+
+#opcoes{
+	/*border: 2px solid red;	*/
+	width: 4.5in;
+	min-height: 3in;
+	padding: 0;
+	position: absolute;
+	margin-left: 40%;
+	margin-top: 10%;
+}
+
+
+button{
+	position: relative;
+	padding: 0;
+	margin: 0;
+	min-height: 3in;
+	min-width: 2in;
+	max-width: 2in;
+
+}

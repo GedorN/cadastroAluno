@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Consulta de Notas</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="paginaCadastro.css" />
+
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	</head>
+	<body>
+	<h1>Página para a consulta de notas dos alunos</h1>
+	<div id="consulta">
+		<p>Insira o nome do aluno</p>
+		<input v-model="text" v-on:keyup.enter="searchSudent()"></input>
+
+	</div>
+
+
+
+	<script src="paginaCadastro.js"></script>
+	</body>
+</html>
